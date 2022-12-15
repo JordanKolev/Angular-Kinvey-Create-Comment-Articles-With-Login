@@ -8,15 +8,15 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class ContentComponent implements OnInit, DoCheck {
 
-  isLoggedIn: boolean; 
+  isLoggedIn: boolean;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-  } 
+  }
 
-  ngDoCheck() { 
-    this.isLoggedIn = this.authService.isAuthenticated(); 
+  ngDoCheck() {
+    this.isLoggedIn = this.authService.isAuthenticated();
   }
 
 }

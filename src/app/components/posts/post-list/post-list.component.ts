@@ -10,7 +10,7 @@ import { PostInfo } from '../../shared/models/Post-info';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-  allPosts$: Observable<PostInfo[]>; 
+  allPosts$: Observable<PostInfo[]>;
 
   constructor(
     private postService: PostService,
@@ -18,13 +18,13 @@ export class PostListComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {  
-    this.route.url.subscribe((segmentArr: UrlSegment[]) => { 
-      const segment = segmentArr[0]; 
-      if (!segment) { 
-        this.allPosts$ = this.postService.getAll(); 
+  ngOnInit() {
+    this.route.url.subscribe((segmentArr: UrlSegment[]) => {
+      const segment = segmentArr[0];
+      if (!segment) {
+        this.allPosts$ = this.postService.getAll();
       } else {
-        this.allPosts$ = this.postService.getUserPosts();       
+        this.allPosts$ = this.postService.getUserPosts();
       }
     })
   }
@@ -32,9 +32,9 @@ export class PostListComponent implements OnInit {
   onDeletePost(id: string) {
     this.postService.deletePost(id)
       .subscribe(() => {
-        this.allPosts$ = this.postService.getAll(); 
-      })
-  } 
+        this.allPosts$ = this.postService.getAll();
+      });
+  }
 
   isAuthor(post: Object) {
     return post['_acl']['creator'] === localStorage.getItem('userId');
@@ -44,8 +44,8 @@ export class PostListComponent implements OnInit {
     this.postService.deletePost(id)
       .subscribe(() => {
         this.router.navigate(['/posts']);
-      })
-  } 
+      });
+  }
 
-  
+
 }

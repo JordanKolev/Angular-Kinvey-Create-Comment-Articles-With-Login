@@ -26,6 +26,6 @@ export class PostCreateComponent implements OnInit {
     this.postService.createPost(body)
       .subscribe(() => {
         this.router.navigate([ '/posts' ]);
-      })
+      });
   }
 }

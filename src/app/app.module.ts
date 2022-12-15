@@ -8,7 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/authentication/register/register.component';
-import { LoginComponent } from './components/authentication/login/login.component'; 
+import { LoginComponent } from './components/authentication/login/login.component';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { SharedModule } from './components/shared/shared.module';
@@ -18,7 +18,7 @@ import { PostModule } from './components/posts/post.module';
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent, 
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,18 +26,18 @@ import { PostModule } from './components/posts/post.module';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(), 
-    SharedModule, 
+    ToastrModule.forRoot(),
+    SharedModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
-      multi: true, 
-    }, 
+      multi: true,
+    },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: ErrorInterceptor, 
+      useClass: ErrorInterceptor,
       multi: true
     }
 

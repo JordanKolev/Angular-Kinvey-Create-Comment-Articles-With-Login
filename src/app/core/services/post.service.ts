@@ -16,31 +16,31 @@ export class PostService {
   ) { }
 
   getAll() {
-    return this.http.get<PostInfo[]>(this.ALL_POSTS); 
+    return this.http.get<PostInfo[]>(this.ALL_POSTS);
   }
 
   createPost(body: Object) {
-    return this.http.post(this.CREATE_POST, body); 
+    return this.http.post(this.CREATE_POST, body);
   }
 
   getById(id: string) {
-    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`); 
+    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`);
   }
 
   getDetails(id: string) {
-    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`); 
+    return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`);
   }
 
   editPost(body: Object, id: string) {
-    return this.http.put(this.CREATE_POST + `/${id}`, body); 
+    return this.http.put(this.CREATE_POST + `/${id}`, body);
   }
 
   deletePost(id: string) {
-    return this.http.delete(this.CREATE_POST + `/${id}`); 
+    return this.http.delete(this.CREATE_POST + `/${id}`);
   }
 
   getUserPosts() {
     return this.http
-      .get<PostInfo[]>(`${this.BASE_URL}/posts?query={"author":"${localStorage.getItem('username')}"}&sort={"_kmd.ect": -1}`); 
+      .get<PostInfo[]>(`${this.BASE_URL}/posts?query={"author":"${localStorage.getItem('username')}"}&sort={"_kmd.ect": -1}`);
   }
 }

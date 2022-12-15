@@ -8,12 +8,12 @@ import { AuthService } from './core/services/auth.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements DoCheck {
-   
-  constructor() { } 
+
+  constructor() { }
 
   ngDoCheck() {
-    
+
   }
 
 
-} 
+}

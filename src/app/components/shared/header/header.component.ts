@@ -10,12 +10,12 @@ import { AuthService } from 'src/app/core/services/auth.service';
 export class HeaderComponent implements OnInit, DoCheck {
 
   username: string = '';
-  isLoggedIn: boolean; 
+  isLoggedIn: boolean;
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-  } 
+  }
   ngDoCheck() {
     this.username = localStorage.getItem('username');
     this.isLoggedIn = this.authService.isAuthenticated();
@@ -23,9 +23,9 @@ export class HeaderComponent implements OnInit, DoCheck {
 
   logout() {
     this.authService.logout()
-      .subscribe(() => { 
-        localStorage.clear(); 
-      }) 
+      .subscribe(() => {
+        localStorage.clear();
+      });
   }
 
 }

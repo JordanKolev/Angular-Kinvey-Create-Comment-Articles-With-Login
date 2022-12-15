@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { APP_KEY, APP_SECRET } from 'src/app/kinvey.tokens';  
+import { APP_KEY, APP_SECRET } from 'src/app/kinvey.tokens';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService { 
+export class AuthService {
 
 
   private readonly BASE_URL = `https://baas.kinvey.com/user/${APP_KEY}`;
 
   constructor(
-    private http: HttpClient, private router: Router 
+    private http: HttpClient, private router: Router
   ) { }
 
 
@@ -21,17 +21,17 @@ export class AuthService {
   }
 
   signUp(body: Object) {
-    return this.http.post(this.BASE_URL, body); 
+    return this.http.post(this.BASE_URL, body);
   }
 
   signIn(body: Object) {
-    return this.http.post(`${this.BASE_URL}/login`, body); 
+    return this.http.post(`${this.BASE_URL}/login`, body);
   }
 
-  logout() { 
-    localStorage.clear(); 
-    this.router.navigate(['/login']); 
-    return this.http.post(`${this.BASE_URL}/_logout`, {});     
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
+    return this.http.post(`${this.BASE_URL}/_logout`, {});
   }
 
   isAuthenticated() {
@@ -41,6 +41,6 @@ export class AuthService {
   saveUserInfo(res: Object) {
     localStorage.setItem('username', res['username']);
     localStorage.setItem('token', res['_kmd']['authtoken']);
-    localStorage.setItem('userId', res['_id']); 
+    localStorage.setItem('userId', res['_id']);
   }
 }

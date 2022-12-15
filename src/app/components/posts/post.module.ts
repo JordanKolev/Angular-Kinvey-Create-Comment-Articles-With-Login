@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core'; 
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommentCreateComponent } from '../comments/comment-create/comment-create.component';
@@ -11,25 +11,25 @@ import { PostInfoComponent } from './post-info/post-info.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostRoutingModule } from './post-routing.module';
 
-@NgModule({ 
+@NgModule({
     imports: [
-        CommonModule, 
-        FormsModule, 
-        RouterModule, 
-        PostRoutingModule, 
-    ], 
-    declarations: [ 
-        CommentInfoComponent, 
-        CommentCreateComponent, 
-        PostCreateComponent, 
-        PostDetailsComponent, 
-        PostInfoComponent, 
-        PostListComponent, 
-        PostEditComponent, 
-    ], 
+        CommonModule,
+        FormsModule,
+        RouterModule,
+        PostRoutingModule,
+    ],
+    declarations: [
+        CommentInfoComponent,
+        CommentCreateComponent,
+        PostCreateComponent,
+        PostDetailsComponent,
+        PostInfoComponent,
+        PostListComponent,
+        PostEditComponent,
+    ],
     exports: [
 
-    ], 
-}) 
+    ],
+})
 
-export class PostModule { }  
+export class PostModule { }

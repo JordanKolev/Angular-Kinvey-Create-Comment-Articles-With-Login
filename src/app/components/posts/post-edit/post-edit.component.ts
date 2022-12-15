@@ -11,7 +11,7 @@ import { PostInfo } from '../../shared/models/Post-info';
 })
 export class PostEditComponent implements OnInit {
   @ViewChild('f') editPostForm: NgForm;
-  post: PostInfo; 
+  post: PostInfo;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,7 +33,7 @@ export class PostEditComponent implements OnInit {
 
     this.postService.editPost(body, this.post['_id'])
       .subscribe(() => {
-        this.router.navigate([ '/posts' ]);
-      })
+        this.router.navigate(['/posts']);
+      });
   }
 }
