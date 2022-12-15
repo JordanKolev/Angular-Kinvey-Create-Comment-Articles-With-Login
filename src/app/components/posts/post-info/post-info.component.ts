@@ -20,7 +20,7 @@ export class PostInfoComponent implements OnInit {
   ngOnInit() {
   }
 
-  isAuthor(post: Object) {
+  isAuthor(post) {
     return post['_acl']['creator'] === localStorage.getItem('userId');
   }
 

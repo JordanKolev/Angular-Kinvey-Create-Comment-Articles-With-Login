@@ -19,7 +19,7 @@ export class CommentService {
     return this.http.get<CommentInfo[]>(`${this.CREATE_COMMENT}?query={"postId":"${postId}"}&sort={"_kmd.ect": -1}`);
   }
 
-  postComment(body: Object) {
+  postComment(body) {
     return this.http.post(this.CREATE_COMMENT, body);
   }
 

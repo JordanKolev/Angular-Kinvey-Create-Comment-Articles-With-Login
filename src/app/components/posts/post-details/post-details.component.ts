@@ -35,13 +35,13 @@ export class PostDetailsComponent implements OnInit {
     this.comments$ = this.commentService.getAllForPost(this.id);
   }
 
-  postComment(body: Object) {
+  postComment(body) {
     this.commentService
       .postComment(body)
       .subscribe((data) => {
         console.log(data);
         this.loadComments();
-      })
+      });
   }
 
   deleteComment(id) {

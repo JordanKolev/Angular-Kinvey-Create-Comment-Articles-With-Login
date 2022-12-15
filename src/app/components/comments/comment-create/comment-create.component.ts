@@ -10,23 +10,23 @@ import { CommentService } from 'src/app/core/services/comment.service';
 })
 export class CommentCreateComponent implements OnInit {
 
-  @ViewChild('f') createCommentForm: NgForm; 
-  @Input() postId: string; 
-  @Output() postCommentEmitter = new EventEmitter<Object>();  
+  @ViewChild('f') createCommentForm: NgForm;
+  @Input() postId: string;
+  @Output() postCommentEmitter = new EventEmitter<object>();
 
   constructor(private commentService: CommentService) { }
 
-  ngOnInit() { 
-  } 
+  ngOnInit() {
+  }
 
   postComment() {
     const body = this.createCommentForm.value;
-    body['postId'] = this.postId; 
+    body['postId'] = this.postId;
     body['author'] = localStorage.getItem('username');
 
-    this.postCommentEmitter.emit(body); 
-    this.createCommentForm.reset(); 
-     
-  } 
+    this.postCommentEmitter.emit(body);
+    this.createCommentForm.reset();
+
+  }
 
 }

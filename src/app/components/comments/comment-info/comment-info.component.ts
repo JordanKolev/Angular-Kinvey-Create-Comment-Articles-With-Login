@@ -21,7 +21,7 @@ export class CommentInfoComponent implements OnInit {
     this.deleteCommentEmitter.emit(id);
   }
 
-  isAuthor(commentInfo: Object) {
+  isAuthor(commentInfo) {
     return commentInfo['_acl']['creator'] === localStorage.getItem('userId');
   }
 }

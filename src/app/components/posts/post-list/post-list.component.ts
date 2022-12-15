@@ -26,7 +26,7 @@ export class PostListComponent implements OnInit {
       } else {
         this.allPosts$ = this.postService.getUserPosts();
       }
-    })
+    });
   }
 
   onDeletePost(id: string) {
@@ -36,7 +36,7 @@ export class PostListComponent implements OnInit {
       });
   }
 
-  isAuthor(post: Object) {
+  isAuthor(post) {
     return post['_acl']['creator'] === localStorage.getItem('userId');
   }
 

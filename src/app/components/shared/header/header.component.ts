@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class HeaderComponent implements OnInit, DoCheck {
 
-  username: string = '';
+  username = '';
   isLoggedIn: boolean;
 
   constructor(private authService: AuthService, private router: Router) { }

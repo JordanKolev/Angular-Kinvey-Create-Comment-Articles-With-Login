@@ -19,7 +19,7 @@ export class PostService {
     return this.http.get<PostInfo[]>(this.ALL_POSTS);
   }
 
-  createPost(body: Object) {
+  createPost(body) {
     return this.http.post(this.CREATE_POST, body);
   }
 
@@ -31,7 +31,7 @@ export class PostService {
     return this.http.get<PostInfo>(this.CREATE_POST + `/${id}`);
   }
 
-  editPost(body: Object, id: string) {
+  editPost(body, id: string) {
     return this.http.put(this.CREATE_POST + `/${id}`, body);
   }
 

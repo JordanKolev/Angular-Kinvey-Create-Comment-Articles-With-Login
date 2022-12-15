@@ -20,11 +20,11 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  signUp(body: Object) {
+  signUp(body) {
     return this.http.post(this.BASE_URL, body);
   }
 
-  signIn(body: Object) {
+  signIn(body) {
     return this.http.post(`${this.BASE_URL}/login`, body);
   }
 
@@ -38,7 +38,7 @@ export class AuthService {
     return this.token !== null;
   }
 
-  saveUserInfo(res: Object) {
+  saveUserInfo(res) {
     localStorage.setItem('username', res['username']);
     localStorage.setItem('token', res['_kmd']['authtoken']);
     localStorage.setItem('userId', res['_id']);
